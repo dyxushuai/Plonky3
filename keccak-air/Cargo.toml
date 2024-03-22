@@ -24,7 +24,7 @@ p3-maybe-rayon = { path = "../maybe-rayon" }
 p3-mds = { path = "../mds" }
 p3-merkle-tree = { path = "../merkle-tree" }
 p3-mersenne-31 = { path = "../mersenne-31" }
-p3-poseidon = {path = "../poseidon"}
+p3-poseidon = { path = "../poseidon" }
 p3-poseidon2 = { path = "../poseidon2" }
 p3-symmetric = { path = "../symmetric" }
 p3-uni-stark = { path = "../uni-stark" }
@@ -43,6 +43,9 @@ name = "prove_goldilocks_keccak"
 
 [[example]]
 name = "prove_goldilocks_poseidon"
+
+[[example]]
+name = "prove_m31_keccak"
 
 [features]
 # TODO: Consider removing, at least when this gets split off into another repository.

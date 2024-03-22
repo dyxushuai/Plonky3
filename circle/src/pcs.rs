@@ -8,11 +8,12 @@ use p3_matrix::dense::{RowMajorMatrix, RowMajorMatrixView};
 use p3_matrix::routines::columnwise_dot_product;
 use p3_matrix::{Matrix, MatrixRows};
 use p3_util::log2_strict_usize;
+use serde::{Deserialize, Serialize};
 use tracing::instrument;
 
-use crate::cfft::Cfft;
 use crate::domain::CircleDomain;
 use crate::util::{univariate_to_point, v_n};
+use crate::Cfft;
 
 pub struct CirclePcs<Val, InputMmcs> {
     pub log_blowup: usize,
@@ -20,6 +21,7 @@ pub struct CirclePcs<Val, InputMmcs> {
     pub mmcs: InputMmcs,
 }
 
+#[derive(Serialize, Deserialize)]
 pub struct ProverData<Val, MmcsData> {
     committed_domains: Vec<CircleDomain<Val>>,
     mmcs_data: MmcsData,
